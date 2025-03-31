@@ -7,16 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Logica;
 using MaterialSkin;
 using MaterialSkin.Controls;
-using Modelo;
 
 namespace Presentacion
 {
-    public partial class Principal : MaterialForm
+    public partial class ArticuloForm : MaterialForm
     {
-        public Principal()
+        public ArticuloForm()
         {
             InitializeComponent();
 
@@ -25,19 +23,9 @@ namespace Presentacion
             msm.Theme = MaterialSkinManager.Themes.DARK;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
-            ArticuloLogica logica = new ArticuloLogica();
-            dgvArticulos.AutoGenerateColumns = false;
-            dgvArticulos.DataSource = logica.Listar();
-
-
-        }
-
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            ArticuloForm alta = new ArticuloForm();
-            alta.ShowDialog();
+            Close();
         }
     }
 }
