@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using Modelo;
+using Logica;
 
 namespace Presentacion
 {
@@ -26,6 +28,46 @@ namespace Presentacion
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            Articulo articulo = new Articulo();
+            ArticuloLogica logica = new ArticuloLogica();
+            try
+            {
+                articulo.Codigo = txtCodigo.Text;
+                articulo.Nombre = txtNombre.Text;
+                articulo.Descripcion = txtDescripcion.Text;
+                articulo.Precio = Convert.ToDecimal(txtPrecio.Text);
+                articulo.Marca = cmbMarca.SelectedItem as Marca;
+                articulo.Categoria = cmbCategoria.SelectedItem as Categoria;
+                articulo.ImagenUrl = txtImagenUrl.Text;
+
+                logica.Agregar(articulo);
+                MessageBox.Show("Artículo agregado correctamente");
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void ArticuloForm_Load(object sender, EventArgs e)
+        {
+            MarcaLogica marcaLogica = new MarcaLogica();
+            CategoriaLogica categoriaLogica = new CategoriaLogica();
+            try
+            {
+                cmbMarca.DataSource = marcaLogica.Listar();
+                cmbCategoria.DataSource = categoriaLogica.Listar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

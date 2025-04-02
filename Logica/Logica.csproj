@@ -47,6 +47,8 @@
   <ItemGroup>
     <Compile Include="AccesoDatos.cs" />
     <Compile Include="ArticuloLogica.cs" />
+    <Compile Include="CategoriaLogica.cs" />
+    <Compile Include="MarcaLogica.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

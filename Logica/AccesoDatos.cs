@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Modelo;
 
 
 namespace Logica
@@ -44,6 +45,11 @@ namespace Logica
             }
         }
 
+        public void SetearParametro(string nombre, object valor)
+        {
+            comando.Parameters.AddWithValue(nombre, valor);
+        }
+
         public void CerrarConexion()
         {
             if (lector != null)
@@ -51,5 +57,18 @@ namespace Logica
             conexion.Close();
         }
 
+        public void EjecutarAccion()
+        {
+            comando.Connection = conexion;
+            try
+            {
+                conexion.Open();
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

@@ -29,8 +29,13 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
             this.cmbCampo = new MaterialSkin.Controls.MaterialComboBox();
             this.cmbCriterio = new MaterialSkin.Controls.MaterialComboBox();
@@ -40,14 +45,14 @@
             this.btnEliminar = new MaterialSkin.Controls.MaterialButton();
             this.btnVerDetalle = new MaterialSkin.Controls.MaterialButton();
             this.btnAgregar = new MaterialSkin.Controls.MaterialButton();
+            this.pbxArticulo = new System.Windows.Forms.PictureBox();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ImagenUrl = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvArticulos
@@ -61,23 +66,24 @@
             this.dgvArticulos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
             this.Nombre,
-            this.Descripcion,
-            this.IdMarca,
-            this.IdCategoria,
-            this.Precio,
-            this.ImagenUrl});
+            this.Marca,
+            this.Categoria,
+            this.Precio});
             this.dgvArticulos.Location = new System.Drawing.Point(4, 139);
             this.dgvArticulos.Margin = new System.Windows.Forms.Padding(2);
             this.dgvArticulos.MultiSelect = false;
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.ReadOnly = true;
+            this.dgvArticulos.RowHeadersVisible = false;
             this.dgvArticulos.RowHeadersWidth = 62;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.dgvArticulos.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvArticulos.RowTemplate.Height = 60;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            this.dgvArticulos.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvArticulos.RowTemplate.Height = 40;
+            this.dgvArticulos.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvArticulos.Size = new System.Drawing.Size(792, 256);
+            this.dgvArticulos.Size = new System.Drawing.Size(563, 348);
             this.dgvArticulos.TabIndex = 0;
+            this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
             // 
             // cmbCampo
             // 
@@ -135,13 +141,13 @@
             this.txtBuscar.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtBuscar.Hint = "Buscar";
             this.txtBuscar.LeadingIcon = null;
-            this.txtBuscar.Location = new System.Drawing.Point(303, 77);
+            this.txtBuscar.Location = new System.Drawing.Point(315, 77);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscar.MaxLength = 50;
             this.txtBuscar.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBuscar.Multiline = false;
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(99, 50);
+            this.txtBuscar.Size = new System.Drawing.Size(127, 50);
             this.txtBuscar.TabIndex = 3;
             this.txtBuscar.Text = "";
             this.txtBuscar.TrailingIcon = null;
@@ -154,12 +160,12 @@
             this.btnBuscar.Depth = 0;
             this.btnBuscar.HighEmphasis = true;
             this.btnBuscar.Icon = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Icon")));
-            this.btnBuscar.Location = new System.Drawing.Point(458, 77);
+            this.btnBuscar.Location = new System.Drawing.Point(458, 78);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnBuscar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnBuscar.Size = new System.Drawing.Size(109, 48);
+            this.btnBuscar.Size = new System.Drawing.Size(109, 50);
             this.btnBuscar.TabIndex = 4;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -174,7 +180,7 @@
             this.btnEditar.Depth = 0;
             this.btnEditar.HighEmphasis = true;
             this.btnEditar.Icon = ((System.Drawing.Image)(resources.GetObject("btnEditar.Icon")));
-            this.btnEditar.Location = new System.Drawing.Point(156, 416);
+            this.btnEditar.Location = new System.Drawing.Point(223, 522);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEditar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEditar.Name = "btnEditar";
@@ -194,7 +200,7 @@
             this.btnEliminar.Depth = 0;
             this.btnEliminar.HighEmphasis = true;
             this.btnEliminar.Icon = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Icon")));
-            this.btnEliminar.Location = new System.Drawing.Point(303, 416);
+            this.btnEliminar.Location = new System.Drawing.Point(432, 522);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEliminar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEliminar.Name = "btnEliminar";
@@ -214,7 +220,7 @@
             this.btnVerDetalle.Depth = 0;
             this.btnVerDetalle.HighEmphasis = true;
             this.btnVerDetalle.Icon = ((System.Drawing.Image)(resources.GetObject("btnVerDetalle.Icon")));
-            this.btnVerDetalle.Location = new System.Drawing.Point(603, 416);
+            this.btnVerDetalle.Location = new System.Drawing.Point(628, 449);
             this.btnVerDetalle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnVerDetalle.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnVerDetalle.Name = "btnVerDetalle";
@@ -234,7 +240,7 @@
             this.btnAgregar.Depth = 0;
             this.btnAgregar.HighEmphasis = true;
             this.btnAgregar.Icon = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Icon")));
-            this.btnAgregar.Location = new System.Drawing.Point(5, 416);
+            this.btnAgregar.Location = new System.Drawing.Point(22, 522);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAgregar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAgregar.Name = "btnAgregar";
@@ -247,62 +253,86 @@
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
+            // pbxArticulo
+            // 
+            this.pbxArticulo.Location = new System.Drawing.Point(572, 139);
+            this.pbxArticulo.Name = "pbxArticulo";
+            this.pbxArticulo.Size = new System.Drawing.Size(223, 303);
+            this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxArticulo.TabIndex = 9;
+            this.pbxArticulo.TabStop = false;
+            // 
             // Codigo
             // 
+            this.Codigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.Codigo.DataPropertyName = "Codigo";
+            dataGridViewCellStyle2.NullValue = "True";
+            this.Codigo.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Codigo.FillWeight = 126.9036F;
             this.Codigo.HeaderText = "Código";
+            this.Codigo.MinimumWidth = 8;
             this.Codigo.Name = "Codigo";
             this.Codigo.ReadOnly = true;
+            this.Codigo.Width = 8;
             // 
             // Nombre
             // 
+            this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.Nombre.DataPropertyName = "Nombre";
+            dataGridViewCellStyle3.NullValue = "True";
+            this.Nombre.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Nombre.FillWeight = 134.4192F;
             this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 8;
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 8;
             // 
-            // Descripcion
+            // Marca
             // 
-            this.Descripcion.DataPropertyName = "Descripcion";
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
+            this.Marca.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Marca.DataPropertyName = "Marca";
+            dataGridViewCellStyle4.NullValue = "True";
+            this.Marca.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Marca.FillWeight = 82.02563F;
+            this.Marca.HeaderText = "Marca";
+            this.Marca.MinimumWidth = 8;
+            this.Marca.Name = "Marca";
+            this.Marca.ReadOnly = true;
+            this.Marca.Width = 62;
             // 
-            // IdMarca
+            // Categoria
             // 
-            this.IdMarca.DataPropertyName = "IdMarca";
-            this.IdMarca.HeaderText = "Marca";
-            this.IdMarca.Name = "IdMarca";
-            this.IdMarca.ReadOnly = true;
-            // 
-            // IdCategoria
-            // 
-            this.IdCategoria.DataPropertyName = "IdCategoria";
-            this.IdCategoria.HeaderText = "Categoría";
-            this.IdCategoria.Name = "IdCategoria";
-            this.IdCategoria.ReadOnly = true;
+            this.Categoria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Categoria.DataPropertyName = "Categoria";
+            dataGridViewCellStyle5.NullValue = "True";
+            this.Categoria.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Categoria.FillWeight = 108.6808F;
+            this.Categoria.HeaderText = "Categoría";
+            this.Categoria.MinimumWidth = 8;
+            this.Categoria.Name = "Categoria";
+            this.Categoria.ReadOnly = true;
+            this.Categoria.Width = 79;
             // 
             // Precio
             // 
+            this.Precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Precio.DataPropertyName = "Precio";
+            dataGridViewCellStyle6.Format = "C2";
+            dataGridViewCellStyle6.NullValue = "True";
+            this.Precio.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Precio.FillWeight = 47.97093F;
             this.Precio.HeaderText = "Precio";
+            this.Precio.MinimumWidth = 8;
             this.Precio.Name = "Precio";
             this.Precio.ReadOnly = true;
-            // 
-            // ImagenUrl
-            // 
-            this.ImagenUrl.DataPropertyName = "ImagenUrl";
-            this.ImagenUrl.HeaderText = "Imagen";
-            this.ImagenUrl.Name = "ImagenUrl";
-            this.ImagenUrl.ReadOnly = true;
-            this.ImagenUrl.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ImagenUrl.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.pbxArticulo);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnVerDetalle);
             this.Controls.Add(this.btnEliminar);
@@ -316,9 +346,10 @@
             this.Name = "Principal";
             this.Padding = new System.Windows.Forms.Padding(2, 42, 2, 2);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Catálogo de Articulos";
+            this.Text = "Catálogo de Artículos";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -334,13 +365,12 @@
         private MaterialSkin.Controls.MaterialButton btnEliminar;
         private MaterialSkin.Controls.MaterialButton btnVerDetalle;
         private MaterialSkin.Controls.MaterialButton btnAgregar;
+        private System.Windows.Forms.PictureBox pbxArticulo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdMarca;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdCategoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewImageColumn ImagenUrl;
     }
 }
 
