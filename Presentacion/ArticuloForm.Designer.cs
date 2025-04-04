@@ -30,18 +30,18 @@
         {
             this.txtCodigo = new MaterialSkin.Controls.MaterialTextBox();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.pbxArticulo = new System.Windows.Forms.PictureBox();
             this.txtDescripcion = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
             this.cmbCategoria = new MaterialSkin.Controls.MaterialComboBox();
             this.cmbMarca = new MaterialSkin.Controls.MaterialComboBox();
             this.btnImagen = new MaterialSkin.Controls.MaterialButton();
-            this.pbxImagen = new System.Windows.Forms.PictureBox();
             this.txtPrecio = new MaterialSkin.Controls.MaterialTextBox();
             this.txtImagenUrl = new MaterialSkin.Controls.MaterialTextBox();
             this.txtNombre = new MaterialSkin.Controls.MaterialTextBox();
             this.btnAceptar = new MaterialSkin.Controls.MaterialButton();
             this.btnCancelar = new MaterialSkin.Controls.MaterialButton();
             this.materialCard1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCodigo
@@ -65,11 +65,11 @@
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.pbxArticulo);
             this.materialCard1.Controls.Add(this.txtDescripcion);
             this.materialCard1.Controls.Add(this.cmbCategoria);
             this.materialCard1.Controls.Add(this.cmbMarca);
             this.materialCard1.Controls.Add(this.btnImagen);
-            this.materialCard1.Controls.Add(this.pbxImagen);
             this.materialCard1.Controls.Add(this.txtPrecio);
             this.materialCard1.Controls.Add(this.txtImagenUrl);
             this.materialCard1.Controls.Add(this.txtNombre);
@@ -84,6 +84,15 @@
             this.materialCard1.Size = new System.Drawing.Size(766, 457);
             this.materialCard1.TabIndex = 0;
             // 
+            // pbxArticulo
+            // 
+            this.pbxArticulo.Location = new System.Drawing.Point(407, 251);
+            this.pbxArticulo.Name = "pbxArticulo";
+            this.pbxArticulo.Size = new System.Drawing.Size(292, 189);
+            this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxArticulo.TabIndex = 10;
+            this.pbxArticulo.TabStop = false;
+            // 
             // txtDescripcion
             // 
             this.txtDescripcion.AnimateReadOnly = false;
@@ -94,7 +103,7 @@
             this.txtDescripcion.HideSelection = true;
             this.txtDescripcion.Hint = "Descripción";
             this.txtDescripcion.Location = new System.Drawing.Point(17, 251);
-            this.txtDescripcion.MaxLength = 32767;
+            this.txtDescripcion.MaxLength = 150;
             this.txtDescripcion.MouseState = MaterialSkin.MouseState.OUT;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.PasswordChar = '\0';
@@ -176,15 +185,6 @@
             this.btnImagen.UseAccentColor = false;
             this.btnImagen.UseVisualStyleBackColor = true;
             // 
-            // pbxImagen
-            // 
-            this.pbxImagen.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pbxImagen.Location = new System.Drawing.Point(407, 251);
-            this.pbxImagen.Name = "pbxImagen";
-            this.pbxImagen.Size = new System.Drawing.Size(292, 189);
-            this.pbxImagen.TabIndex = 14;
-            this.pbxImagen.TabStop = false;
-            // 
             // txtPrecio
             // 
             this.txtPrecio.AnimateReadOnly = false;
@@ -194,7 +194,7 @@
             this.txtPrecio.Hint = "Precio";
             this.txtPrecio.LeadingIcon = null;
             this.txtPrecio.Location = new System.Drawing.Point(17, 171);
-            this.txtPrecio.MaxLength = 50;
+            this.txtPrecio.MaxLength = 10;
             this.txtPrecio.MouseState = MaterialSkin.MouseState.OUT;
             this.txtPrecio.Multiline = false;
             this.txtPrecio.Name = "txtPrecio";
@@ -212,7 +212,7 @@
             this.txtImagenUrl.Hint = "Imagen";
             this.txtImagenUrl.LeadingIcon = null;
             this.txtImagenUrl.Location = new System.Drawing.Point(407, 171);
-            this.txtImagenUrl.MaxLength = 50;
+            this.txtImagenUrl.MaxLength = 1000;
             this.txtImagenUrl.MouseState = MaterialSkin.MouseState.OUT;
             this.txtImagenUrl.Multiline = false;
             this.txtImagenUrl.Name = "txtImagenUrl";
@@ -220,6 +220,7 @@
             this.txtImagenUrl.TabIndex = 6;
             this.txtImagenUrl.Text = "";
             this.txtImagenUrl.TrailingIcon = null;
+            this.txtImagenUrl.Leave += new System.EventHandler(this.TxtImagenUrl_Leave);
             // 
             // txtNombre
             // 
@@ -294,7 +295,7 @@
             this.Text = "Nuevo Artículo";
             this.Load += new System.EventHandler(this.ArticuloForm_Load);
             this.materialCard1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -305,12 +306,12 @@
         private MaterialSkin.Controls.MaterialTextBox txtPrecio;
         private MaterialSkin.Controls.MaterialTextBox txtImagenUrl;
         private MaterialSkin.Controls.MaterialTextBox txtNombre;
-        private System.Windows.Forms.PictureBox pbxImagen;
         private MaterialSkin.Controls.MaterialButton btnImagen;
         private MaterialSkin.Controls.MaterialButton btnAceptar;
         private MaterialSkin.Controls.MaterialButton btnCancelar;
         private MaterialSkin.Controls.MaterialComboBox cmbCategoria;
         private MaterialSkin.Controls.MaterialComboBox cmbMarca;
         private MaterialSkin.Controls.MaterialMultiLineTextBox2 txtDescripcion;
+        private System.Windows.Forms.PictureBox pbxArticulo;
     }
 }

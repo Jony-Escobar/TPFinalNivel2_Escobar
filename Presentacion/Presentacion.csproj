@@ -56,6 +56,12 @@
     <Compile Include="ArticuloForm.Designer.cs">
       <DependentUpon>ArticuloForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DetalleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetalleForm.Designer.cs">
+      <DependentUpon>DetalleForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ArticuloForm.resx">
       <DependentUpon>ArticuloForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetalleForm.resx">
+      <DependentUpon>DetalleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>

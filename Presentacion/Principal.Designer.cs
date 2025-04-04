@@ -30,13 +30,18 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbCampo = new MaterialSkin.Controls.MaterialComboBox();
             this.cmbCriterio = new MaterialSkin.Controls.MaterialComboBox();
             this.txtBuscar = new MaterialSkin.Controls.MaterialTextBox();
@@ -46,11 +51,6 @@
             this.btnVerDetalle = new MaterialSkin.Controls.MaterialButton();
             this.btnAgregar = new MaterialSkin.Controls.MaterialButton();
             this.pbxArticulo = new System.Windows.Forms.PictureBox();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
             this.SuspendLayout();
@@ -85,6 +85,75 @@
             this.dgvArticulos.TabIndex = 0;
             this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
             // 
+            // Codigo
+            // 
+            this.Codigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.Codigo.DataPropertyName = "Codigo";
+            dataGridViewCellStyle2.NullValue = "True";
+            this.Codigo.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Codigo.FillWeight = 103.2728F;
+            this.Codigo.HeaderText = "Código";
+            this.Codigo.MaxInputLength = 50;
+            this.Codigo.MinimumWidth = 40;
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            this.Codigo.Width = 40;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            dataGridViewCellStyle3.NullValue = "True";
+            this.Nombre.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Nombre.FillWeight = 108.7094F;
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MaxInputLength = 50;
+            this.Nombre.MinimumWidth = 50;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Marca
+            // 
+            this.Marca.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.Marca.DataPropertyName = "Marca";
+            dataGridViewCellStyle4.NullValue = "True";
+            this.Marca.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Marca.FillWeight = 126.9036F;
+            this.Marca.HeaderText = "Marca";
+            this.Marca.MaxInputLength = 50;
+            this.Marca.MinimumWidth = 50;
+            this.Marca.Name = "Marca";
+            this.Marca.ReadOnly = true;
+            this.Marca.Width = 50;
+            // 
+            // Categoria
+            // 
+            this.Categoria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.Categoria.DataPropertyName = "Categoria";
+            dataGridViewCellStyle5.NullValue = "True";
+            this.Categoria.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Categoria.FillWeight = 69.66585F;
+            this.Categoria.HeaderText = "Categoría";
+            this.Categoria.MaxInputLength = 50;
+            this.Categoria.MinimumWidth = 50;
+            this.Categoria.Name = "Categoria";
+            this.Categoria.ReadOnly = true;
+            this.Categoria.Width = 50;
+            // 
+            // Precio
+            // 
+            this.Precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.Precio.DataPropertyName = "Precio";
+            dataGridViewCellStyle6.Format = "C2";
+            dataGridViewCellStyle6.NullValue = "True";
+            this.Precio.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Precio.FillWeight = 91.44859F;
+            this.Precio.HeaderText = "Precio";
+            this.Precio.MaxInputLength = 10;
+            this.Precio.MinimumWidth = 50;
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            this.Precio.Width = 50;
+            // 
             // cmbCampo
             // 
             this.cmbCampo.AutoResize = false;
@@ -100,14 +169,15 @@
             this.cmbCampo.Hint = "Campo";
             this.cmbCampo.IntegralHeight = false;
             this.cmbCampo.ItemHeight = 43;
-            this.cmbCampo.Location = new System.Drawing.Point(4, 78);
+            this.cmbCampo.Location = new System.Drawing.Point(22, 78);
             this.cmbCampo.Margin = new System.Windows.Forms.Padding(2);
             this.cmbCampo.MaxDropDownItems = 4;
             this.cmbCampo.MouseState = MaterialSkin.MouseState.OUT;
             this.cmbCampo.Name = "cmbCampo";
-            this.cmbCampo.Size = new System.Drawing.Size(127, 49);
+            this.cmbCampo.Size = new System.Drawing.Size(155, 49);
             this.cmbCampo.StartIndex = 0;
             this.cmbCampo.TabIndex = 1;
+            this.cmbCampo.SelectedIndexChanged += new System.EventHandler(this.cmbCampo_SelectedIndexChanged);
             // 
             // cmbCriterio
             // 
@@ -124,12 +194,12 @@
             this.cmbCriterio.Hint = "Criterio";
             this.cmbCriterio.IntegralHeight = false;
             this.cmbCriterio.ItemHeight = 43;
-            this.cmbCriterio.Location = new System.Drawing.Point(156, 78);
+            this.cmbCriterio.Location = new System.Drawing.Point(213, 78);
             this.cmbCriterio.Margin = new System.Windows.Forms.Padding(2);
             this.cmbCriterio.MaxDropDownItems = 4;
             this.cmbCriterio.MouseState = MaterialSkin.MouseState.OUT;
             this.cmbCriterio.Name = "cmbCriterio";
-            this.cmbCriterio.Size = new System.Drawing.Size(127, 49);
+            this.cmbCriterio.Size = new System.Drawing.Size(155, 49);
             this.cmbCriterio.StartIndex = 0;
             this.cmbCriterio.TabIndex = 2;
             // 
@@ -141,13 +211,13 @@
             this.txtBuscar.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtBuscar.Hint = "Buscar";
             this.txtBuscar.LeadingIcon = null;
-            this.txtBuscar.Location = new System.Drawing.Point(315, 77);
+            this.txtBuscar.Location = new System.Drawing.Point(386, 77);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscar.MaxLength = 50;
             this.txtBuscar.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBuscar.Multiline = false;
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(127, 50);
+            this.txtBuscar.Size = new System.Drawing.Size(155, 50);
             this.txtBuscar.TabIndex = 3;
             this.txtBuscar.Text = "";
             this.txtBuscar.TrailingIcon = null;
@@ -160,17 +230,18 @@
             this.btnBuscar.Depth = 0;
             this.btnBuscar.HighEmphasis = true;
             this.btnBuscar.Icon = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Icon")));
-            this.btnBuscar.Location = new System.Drawing.Point(458, 78);
+            this.btnBuscar.Location = new System.Drawing.Point(572, 78);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnBuscar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnBuscar.Size = new System.Drawing.Size(109, 50);
+            this.btnBuscar.Size = new System.Drawing.Size(102, 50);
             this.btnBuscar.TabIndex = 4;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnBuscar.UseAccentColor = false;
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnEditar
             // 
@@ -191,6 +262,7 @@
             this.btnEditar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnEditar.UseAccentColor = false;
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 
@@ -211,6 +283,7 @@
             this.btnEliminar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnEliminar.UseAccentColor = false;
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnVerDetalle
             // 
@@ -231,6 +304,7 @@
             this.btnVerDetalle.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnVerDetalle.UseAccentColor = false;
             this.btnVerDetalle.UseVisualStyleBackColor = true;
+            this.btnVerDetalle.Click += new System.EventHandler(this.btnVerDetalle_Click);
             // 
             // btnAgregar
             // 
@@ -261,71 +335,6 @@
             this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxArticulo.TabIndex = 9;
             this.pbxArticulo.TabStop = false;
-            // 
-            // Codigo
-            // 
-            this.Codigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
-            this.Codigo.DataPropertyName = "Codigo";
-            dataGridViewCellStyle2.NullValue = "True";
-            this.Codigo.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Codigo.FillWeight = 126.9036F;
-            this.Codigo.HeaderText = "Código";
-            this.Codigo.MinimumWidth = 8;
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            this.Codigo.Width = 8;
-            // 
-            // Nombre
-            // 
-            this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
-            this.Nombre.DataPropertyName = "Nombre";
-            dataGridViewCellStyle3.NullValue = "True";
-            this.Nombre.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Nombre.FillWeight = 134.4192F;
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 8;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 8;
-            // 
-            // Marca
-            // 
-            this.Marca.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Marca.DataPropertyName = "Marca";
-            dataGridViewCellStyle4.NullValue = "True";
-            this.Marca.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Marca.FillWeight = 82.02563F;
-            this.Marca.HeaderText = "Marca";
-            this.Marca.MinimumWidth = 8;
-            this.Marca.Name = "Marca";
-            this.Marca.ReadOnly = true;
-            this.Marca.Width = 62;
-            // 
-            // Categoria
-            // 
-            this.Categoria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Categoria.DataPropertyName = "Categoria";
-            dataGridViewCellStyle5.NullValue = "True";
-            this.Categoria.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Categoria.FillWeight = 108.6808F;
-            this.Categoria.HeaderText = "Categoría";
-            this.Categoria.MinimumWidth = 8;
-            this.Categoria.Name = "Categoria";
-            this.Categoria.ReadOnly = true;
-            this.Categoria.Width = 79;
-            // 
-            // Precio
-            // 
-            this.Precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Precio.DataPropertyName = "Precio";
-            dataGridViewCellStyle6.Format = "C2";
-            dataGridViewCellStyle6.NullValue = "True";
-            this.Precio.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Precio.FillWeight = 47.97093F;
-            this.Precio.HeaderText = "Precio";
-            this.Precio.MinimumWidth = 8;
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
             // 
             // Principal
             // 
