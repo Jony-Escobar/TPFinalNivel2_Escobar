@@ -134,50 +134,7 @@ namespace Presentacion
             }
 
             return true;
-            //if (string.IsNullOrWhiteSpace(txtCodigo.Text))
-            //{
-            //    MessageBox.Show("El campo Código es obligatorio", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    txtCodigo.Focus();
-            //    return;
-            //}
-            //if (string.IsNullOrWhiteSpace(txtNombre.Text))
-            //{
-            //    MessageBox.Show("El campo Nombre es obligatorio", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    txtNombre.Focus();
-            //    return;
-            //}
-            //if (string.IsNullOrWhiteSpace(txtPrecio.Text))
-            //{
-            //    MessageBox.Show("El campo Precio es obligatorio", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    txtPrecio.Focus();
-            //    return;
-            //}
-            //if (cmbMarca.SelectedItem == null)
-            //{
-            //    MessageBox.Show("El campo Marca es obligatorio", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    cmbMarca.Focus();
-            //    return;
-            //}
-            //if (cmbCategoria.SelectedItem == null)
-            //{
-            //    MessageBox.Show("El campo Categoría es obligatorio", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    cmbCategoria.Focus();
-            //    return;
-            //}
-            //if (!decimal.TryParse(txtPrecio.Text, out decimal precio))
-            //{
-            //    MessageBox.Show("El campo Precio debe ser un número válido", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    txtPrecio.Focus();
-            //    return;
-            //}
-            //if (precio <= 0)
-            //{
-            //    MessageBox.Show("El campo Precio debe ser mayor a cero", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    txtPrecio.Focus();
-            //    return;
-            //}
         }
-
         private void ArticuloForm_Load(object sender, EventArgs e)
         {
             MarcaLogica marcaLogica = new MarcaLogica();
