@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -46,13 +47,20 @@
             this.cmbCriterio = new MaterialSkin.Controls.MaterialComboBox();
             this.txtBuscar = new MaterialSkin.Controls.MaterialTextBox();
             this.btnBuscar = new MaterialSkin.Controls.MaterialButton();
-            this.btnEditar = new MaterialSkin.Controls.MaterialButton();
-            this.btnEliminar = new MaterialSkin.Controls.MaterialButton();
             this.btnVerDetalle = new MaterialSkin.Controls.MaterialButton();
-            this.btnAgregar = new MaterialSkin.Controls.MaterialButton();
             this.pbxArticulo = new System.Windows.Forms.PictureBox();
+            this.btnAgregar = new MaterialSkin.Controls.MaterialButton();
+            this.btnEliminar = new MaterialSkin.Controls.MaterialButton();
+            this.btnEditar = new MaterialSkin.Controls.MaterialButton();
+            this.gbGestion = new System.Windows.Forms.GroupBox();
+            this.gbBusquedaAvanzada = new System.Windows.Forms.GroupBox();
+            this.gbBusquedaRapida = new System.Windows.Forms.GroupBox();
+            this.txtBusquedaRapida = new MaterialSkin.Controls.MaterialTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
+            this.gbGestion.SuspendLayout();
+            this.gbBusquedaAvanzada.SuspendLayout();
+            this.gbBusquedaRapida.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvArticulos
@@ -69,25 +77,33 @@
             this.Marca,
             this.Categoria,
             this.Precio});
-            this.dgvArticulos.Location = new System.Drawing.Point(4, 139);
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.SlateBlue;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvArticulos.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvArticulos.Location = new System.Drawing.Point(4, 150);
             this.dgvArticulos.Margin = new System.Windows.Forms.Padding(2);
             this.dgvArticulos.MultiSelect = false;
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.ReadOnly = true;
             this.dgvArticulos.RowHeadersVisible = false;
             this.dgvArticulos.RowHeadersWidth = 62;
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            this.dgvArticulos.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            this.dgvArticulos.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvArticulos.RowTemplate.Height = 40;
             this.dgvArticulos.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvArticulos.Size = new System.Drawing.Size(563, 348);
+            this.dgvArticulos.Size = new System.Drawing.Size(563, 373);
             this.dgvArticulos.TabIndex = 0;
             this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
             // 
             // Codigo
             // 
-            this.Codigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.Codigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Codigo.DataPropertyName = "Codigo";
             dataGridViewCellStyle2.NullValue = "True";
             this.Codigo.DefaultCellStyle = dataGridViewCellStyle2;
@@ -97,7 +113,7 @@
             this.Codigo.MinimumWidth = 40;
             this.Codigo.Name = "Codigo";
             this.Codigo.ReadOnly = true;
-            this.Codigo.Width = 40;
+            this.Codigo.Width = 65;
             // 
             // Nombre
             // 
@@ -169,12 +185,12 @@
             this.cmbCampo.Hint = "Campo";
             this.cmbCampo.IntegralHeight = false;
             this.cmbCampo.ItemHeight = 43;
-            this.cmbCampo.Location = new System.Drawing.Point(22, 78);
+            this.cmbCampo.Location = new System.Drawing.Point(5, 18);
             this.cmbCampo.Margin = new System.Windows.Forms.Padding(2);
             this.cmbCampo.MaxDropDownItems = 4;
             this.cmbCampo.MouseState = MaterialSkin.MouseState.OUT;
             this.cmbCampo.Name = "cmbCampo";
-            this.cmbCampo.Size = new System.Drawing.Size(155, 49);
+            this.cmbCampo.Size = new System.Drawing.Size(139, 49);
             this.cmbCampo.StartIndex = 0;
             this.cmbCampo.TabIndex = 1;
             this.cmbCampo.SelectedIndexChanged += new System.EventHandler(this.cmbCampo_SelectedIndexChanged);
@@ -194,12 +210,12 @@
             this.cmbCriterio.Hint = "Criterio";
             this.cmbCriterio.IntegralHeight = false;
             this.cmbCriterio.ItemHeight = 43;
-            this.cmbCriterio.Location = new System.Drawing.Point(213, 78);
+            this.cmbCriterio.Location = new System.Drawing.Point(164, 18);
             this.cmbCriterio.Margin = new System.Windows.Forms.Padding(2);
             this.cmbCriterio.MaxDropDownItems = 4;
             this.cmbCriterio.MouseState = MaterialSkin.MouseState.OUT;
             this.cmbCriterio.Name = "cmbCriterio";
-            this.cmbCriterio.Size = new System.Drawing.Size(155, 49);
+            this.cmbCriterio.Size = new System.Drawing.Size(132, 49);
             this.cmbCriterio.StartIndex = 0;
             this.cmbCriterio.TabIndex = 2;
             // 
@@ -211,16 +227,17 @@
             this.txtBuscar.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtBuscar.Hint = "Buscar";
             this.txtBuscar.LeadingIcon = null;
-            this.txtBuscar.Location = new System.Drawing.Point(386, 77);
+            this.txtBuscar.Location = new System.Drawing.Point(317, 17);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscar.MaxLength = 50;
             this.txtBuscar.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBuscar.Multiline = false;
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(155, 50);
+            this.txtBuscar.Size = new System.Drawing.Size(124, 50);
             this.txtBuscar.TabIndex = 3;
             this.txtBuscar.Text = "";
             this.txtBuscar.TrailingIcon = null;
+            this.txtBuscar.Enter += new System.EventHandler(this.txtBuscar_Enter);
             // 
             // btnBuscar
             // 
@@ -230,7 +247,7 @@
             this.btnBuscar.Depth = 0;
             this.btnBuscar.HighEmphasis = true;
             this.btnBuscar.Icon = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Icon")));
-            this.btnBuscar.Location = new System.Drawing.Point(572, 78);
+            this.btnBuscar.Location = new System.Drawing.Point(455, 16);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnBuscar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnBuscar.Name = "btnBuscar";
@@ -243,48 +260,6 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // btnEditar
-            // 
-            this.btnEditar.AutoSize = false;
-            this.btnEditar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnEditar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnEditar.Depth = 0;
-            this.btnEditar.HighEmphasis = true;
-            this.btnEditar.Icon = ((System.Drawing.Image)(resources.GetObject("btnEditar.Icon")));
-            this.btnEditar.Location = new System.Drawing.Point(223, 522);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnEditar.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnEditar.Size = new System.Drawing.Size(109, 38);
-            this.btnEditar.TabIndex = 5;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnEditar.UseAccentColor = false;
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.AutoSize = false;
-            this.btnEliminar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnEliminar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnEliminar.Depth = 0;
-            this.btnEliminar.HighEmphasis = true;
-            this.btnEliminar.Icon = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Icon")));
-            this.btnEliminar.Location = new System.Drawing.Point(432, 522);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnEliminar.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnEliminar.Size = new System.Drawing.Size(109, 38);
-            this.btnEliminar.TabIndex = 6;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnEliminar.UseAccentColor = false;
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
             // btnVerDetalle
             // 
             this.btnVerDetalle.AutoSize = false;
@@ -293,7 +268,7 @@
             this.btnVerDetalle.Depth = 0;
             this.btnVerDetalle.HighEmphasis = true;
             this.btnVerDetalle.Icon = ((System.Drawing.Image)(resources.GetObject("btnVerDetalle.Icon")));
-            this.btnVerDetalle.Location = new System.Drawing.Point(628, 449);
+            this.btnVerDetalle.Location = new System.Drawing.Point(623, 22);
             this.btnVerDetalle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnVerDetalle.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnVerDetalle.Name = "btnVerDetalle";
@@ -306,6 +281,15 @@
             this.btnVerDetalle.UseVisualStyleBackColor = true;
             this.btnVerDetalle.Click += new System.EventHandler(this.btnVerDetalle_Click);
             // 
+            // pbxArticulo
+            // 
+            this.pbxArticulo.Location = new System.Drawing.Point(572, 150);
+            this.pbxArticulo.Name = "pbxArticulo";
+            this.pbxArticulo.Size = new System.Drawing.Size(223, 373);
+            this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxArticulo.TabIndex = 9;
+            this.pbxArticulo.TabStop = false;
+            // 
             // btnAgregar
             // 
             this.btnAgregar.AutoSize = false;
@@ -314,7 +298,7 @@
             this.btnAgregar.Depth = 0;
             this.btnAgregar.HighEmphasis = true;
             this.btnAgregar.Icon = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Icon")));
-            this.btnAgregar.Location = new System.Drawing.Point(22, 522);
+            this.btnAgregar.Location = new System.Drawing.Point(6, 22);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAgregar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAgregar.Name = "btnAgregar";
@@ -327,29 +311,119 @@
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // pbxArticulo
+            // btnEliminar
             // 
-            this.pbxArticulo.Location = new System.Drawing.Point(572, 139);
-            this.pbxArticulo.Name = "pbxArticulo";
-            this.pbxArticulo.Size = new System.Drawing.Size(223, 303);
-            this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxArticulo.TabIndex = 9;
-            this.pbxArticulo.TabStop = false;
+            this.btnEliminar.AutoSize = false;
+            this.btnEliminar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnEliminar.BackColor = System.Drawing.Color.IndianRed;
+            this.btnEliminar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnEliminar.Depth = 0;
+            this.btnEliminar.HighEmphasis = true;
+            this.btnEliminar.Icon = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Icon")));
+            this.btnEliminar.Location = new System.Drawing.Point(417, 22);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnEliminar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnEliminar.Size = new System.Drawing.Size(109, 38);
+            this.btnEliminar.TabIndex = 6;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnEliminar.UseAccentColor = false;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.AutoSize = false;
+            this.btnEditar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnEditar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnEditar.Depth = 0;
+            this.btnEditar.HighEmphasis = true;
+            this.btnEditar.Icon = ((System.Drawing.Image)(resources.GetObject("btnEditar.Icon")));
+            this.btnEditar.Location = new System.Drawing.Point(219, 22);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnEditar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnEditar.Size = new System.Drawing.Size(109, 38);
+            this.btnEditar.TabIndex = 5;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnEditar.UseAccentColor = false;
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // gbGestion
+            // 
+            this.gbGestion.BackColor = System.Drawing.Color.White;
+            this.gbGestion.Controls.Add(this.btnAgregar);
+            this.gbGestion.Controls.Add(this.btnEliminar);
+            this.gbGestion.Controls.Add(this.btnEditar);
+            this.gbGestion.Controls.Add(this.btnVerDetalle);
+            this.gbGestion.ForeColor = System.Drawing.Color.SlateBlue;
+            this.gbGestion.Location = new System.Drawing.Point(4, 528);
+            this.gbGestion.Name = "gbGestion";
+            this.gbGestion.Size = new System.Drawing.Size(791, 67);
+            this.gbGestion.TabIndex = 10;
+            this.gbGestion.TabStop = false;
+            this.gbGestion.Text = "Gestionar Artículos";
+            // 
+            // gbBusquedaAvanzada
+            // 
+            this.gbBusquedaAvanzada.Controls.Add(this.cmbCampo);
+            this.gbBusquedaAvanzada.Controls.Add(this.cmbCriterio);
+            this.gbBusquedaAvanzada.Controls.Add(this.txtBuscar);
+            this.gbBusquedaAvanzada.Controls.Add(this.btnBuscar);
+            this.gbBusquedaAvanzada.ForeColor = System.Drawing.Color.SlateBlue;
+            this.gbBusquedaAvanzada.Location = new System.Drawing.Point(4, 73);
+            this.gbBusquedaAvanzada.Name = "gbBusquedaAvanzada";
+            this.gbBusquedaAvanzada.Size = new System.Drawing.Size(563, 72);
+            this.gbBusquedaAvanzada.TabIndex = 11;
+            this.gbBusquedaAvanzada.TabStop = false;
+            this.gbBusquedaAvanzada.Text = "Búsqueda Avanzada";
+            // 
+            // gbBusquedaRapida
+            // 
+            this.gbBusquedaRapida.Controls.Add(this.txtBusquedaRapida);
+            this.gbBusquedaRapida.ForeColor = System.Drawing.Color.SlateBlue;
+            this.gbBusquedaRapida.Location = new System.Drawing.Point(584, 73);
+            this.gbBusquedaRapida.Name = "gbBusquedaRapida";
+            this.gbBusquedaRapida.Size = new System.Drawing.Size(211, 72);
+            this.gbBusquedaRapida.TabIndex = 12;
+            this.gbBusquedaRapida.TabStop = false;
+            this.gbBusquedaRapida.Text = "Búsqueda rápida";
+            // 
+            // txtBusquedaRapida
+            // 
+            this.txtBusquedaRapida.AnimateReadOnly = false;
+            this.txtBusquedaRapida.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBusquedaRapida.Depth = 0;
+            this.txtBusquedaRapida.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtBusquedaRapida.Hint = "Buscar";
+            this.txtBusquedaRapida.LeadingIcon = null;
+            this.txtBusquedaRapida.Location = new System.Drawing.Point(5, 16);
+            this.txtBusquedaRapida.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBusquedaRapida.MaxLength = 50;
+            this.txtBusquedaRapida.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtBusquedaRapida.Multiline = false;
+            this.txtBusquedaRapida.Name = "txtBusquedaRapida";
+            this.txtBusquedaRapida.Size = new System.Drawing.Size(201, 50);
+            this.txtBusquedaRapida.TabIndex = 4;
+            this.txtBusquedaRapida.Text = "";
+            this.txtBusquedaRapida.TrailingIcon = null;
+            this.txtBusquedaRapida.TextChanged += new System.EventHandler(this.txtBusquedaRapida_TextChanged);
+            this.txtBusquedaRapida.Enter += new System.EventHandler(this.txtBusquedaRapida_Enter);
             // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.gbBusquedaRapida);
+            this.Controls.Add(this.gbBusquedaAvanzada);
+            this.Controls.Add(this.gbGestion);
             this.Controls.Add(this.pbxArticulo);
-            this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.btnVerDetalle);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.txtBuscar);
-            this.Controls.Add(this.cmbCriterio);
-            this.Controls.Add(this.cmbCampo);
             this.Controls.Add(this.dgvArticulos);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Principal";
@@ -359,6 +433,9 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).EndInit();
+            this.gbGestion.ResumeLayout(false);
+            this.gbBusquedaAvanzada.ResumeLayout(false);
+            this.gbBusquedaRapida.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -370,11 +447,15 @@
         private MaterialSkin.Controls.MaterialComboBox cmbCriterio;
         private MaterialSkin.Controls.MaterialTextBox txtBuscar;
         private MaterialSkin.Controls.MaterialButton btnBuscar;
-        private MaterialSkin.Controls.MaterialButton btnEditar;
-        private MaterialSkin.Controls.MaterialButton btnEliminar;
         private MaterialSkin.Controls.MaterialButton btnVerDetalle;
-        private MaterialSkin.Controls.MaterialButton btnAgregar;
         private System.Windows.Forms.PictureBox pbxArticulo;
+        private MaterialSkin.Controls.MaterialButton btnAgregar;
+        private MaterialSkin.Controls.MaterialButton btnEliminar;
+        private MaterialSkin.Controls.MaterialButton btnEditar;
+        private System.Windows.Forms.GroupBox gbGestion;
+        private System.Windows.Forms.GroupBox gbBusquedaAvanzada;
+        private System.Windows.Forms.GroupBox gbBusquedaRapida;
+        private MaterialSkin.Controls.MaterialTextBox txtBusquedaRapida;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Marca;

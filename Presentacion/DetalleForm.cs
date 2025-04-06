@@ -22,7 +22,7 @@ namespace Presentacion
 
             MaterialSkinManager msm = MaterialSkinManager.Instance;
             msm.AddFormToManage(this);
-            msm.Theme = MaterialSkinManager.Themes.DARK;
+            msm.Theme = MaterialSkinManager.Themes.LIGHT;
             this.articulo = articulo;
         }
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -32,20 +32,33 @@ namespace Presentacion
 
         private void DetalleForm_Load(object sender, EventArgs e)
         {
-            //cmbMarca.ValueMember = "Id";
-            //cmbMarca.DisplayMember = "Descripcion";
-
-            //cmbCategoria.ValueMember = "Id";
-            //cmbCategoria.DisplayMember = "Descripcion";
-
             lblCodigo.Text = articulo.Codigo;
             lblNombre.Text = articulo.Nombre;
-            lblDescripcion.Text = articulo.Descripcion;
+            //Si la descripcion es nula o vacia
+            if (string.IsNullOrEmpty(articulo.Descripcion))
+            {
+                lblDescripcion.Text = "Sin descripción";
+            }
+            else
+            {
+                lblDescripcion.Text = articulo.Descripcion;
+            }
+            //lblDescripcion.Text = articulo.Descripcion;
             lblMarca.Text = articulo.Marca.Descripcion;
             lblCategoria.Text = articulo.Categoria.Descripcion;
             lblPrecio.Text = articulo.Precio.ToString();
-            lblImagen.Text = articulo.ImagenUrl;
-            pbxArticulo.Load(articulo.ImagenUrl);
+            CargarImagen(articulo.ImagenUrl);
+        }
+        private void CargarImagen(string imagen)
+        {
+            try
+            {
+                pbxArticulo.Load(imagen);
+            }
+            catch (Exception)
+            {
+                pbxArticulo.Load("https://i0.wp.com/stretchingmexico.com/wp-content/uploads/2024/07/placeholder.webp?w=1200&quality=80&ssl=1");
+            }
         }
     }
 }
